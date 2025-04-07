@@ -53,7 +53,7 @@ const GameBoard = ({ difficulty }) => {
   const handleClick = (x, y) => {
     if (gameOver || win) return;
 
-    // Generate board on first click
+    
     if (!gameStarted) {
       const safeBoard = createBoard(rows, cols, bombs, x, y);
       const updated = revealCell(safeBoard, x, y);
@@ -68,10 +68,10 @@ const GameBoard = ({ difficulty }) => {
 
     if (updated[x][y].isBomb) {
       setGameOver(true);
-      alert('💥 Game Over!');
+      alert('Game Over!');
     } else if (checkWinCondition(updated, bombs)) {
       setWin(true);
-      alert(`🎉 You won in ${elapsed}s!`);
+      alert(`You won in ${elapsed}s!`);
       submitGameResult(difficulty, elapsed);
     }
   };
