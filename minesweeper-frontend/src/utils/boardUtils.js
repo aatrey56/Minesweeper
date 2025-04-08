@@ -13,7 +13,6 @@ export const createBoard = (rows, cols, bombs, safeX, safeY) => {
     const x = Math.floor(Math.random() * rows);
     const y = Math.floor(Math.random() * cols);
 
-    // Skip if it's the safe zone (first click or its neighbors)
     if (
       (x === safeX && y === safeY) ||
       (Math.abs(x - safeX) <= 1 && Math.abs(y - safeY) <= 1) ||
